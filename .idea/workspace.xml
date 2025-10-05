@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e1dd503-760a-4595-8d7f-e71ae2394765" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="8e1dd503-760a-4595-8d7f-e71ae2394765" name="Changes" comment="Fixing CORS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
@@ -76,11 +75,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759677955693</updated>
-      <workItem from="1759677956699" duration="2171000" />
+      <workItem from="1759677956699" duration="4683000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixing CORS">
+      <option name="closed" value="true" />
+      <created>1759680305237</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759680305237</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixing CORS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing CORS" />
   </component>
 </project>

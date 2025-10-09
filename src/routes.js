@@ -6,6 +6,8 @@ export async function router(req, res) {
     const url = parse(req.url || '', true);
     const method = req.method;
 
+
+
     // Обработка запроса: GET /timer
     if (url.pathname === '/timer' && method === 'GET') {
         const times = await getAllTimes();

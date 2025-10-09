@@ -12,7 +12,7 @@ export async function router(req, res) {
     const idParam = url.pathname.split('/')[2];
     // getting saved_at time
     const saved_At = url.query.saved_at;
-
+    // First part of Lesson 12 HW with timer app.
     if (url.query.saved_at && method === 'PUT') {
         const result = await updateTimeById(idParam, saved_At);
         res.writeHead(200, {'Content-Type': 'application/json'});

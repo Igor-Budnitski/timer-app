@@ -5,19 +5,33 @@ export async function router(req, res) {
     // Получаем путь (с помощью утилиты parse) и метод из запроса
     const url = parse(req.url || '', true);
     const method = req.method;
-
-    console.log(`Url path: ${url.path}`);
-    console.log(url);
     // getting id value from URL
     const idParam = url.pathname.split('/')[2];
     // getting saved_at time
     const saved_At = url.query.saved_at;
-    // First part of Lesson 12 HW with timer app.
+
+    // check if saved_at is valid and in correct format.
+    function isValidSavedAt(saved_at) {
+        const date = new Date(saved_at);
+        return !Number.isNaN(date.getTime()) && date.toISOString() === saved_at;
+    }
+
+    // First part of Lesson 12 HW with timer app. Replace the time in DB to new one. Wwth checks
     if (url.query.saved_at && method === 'PUT') {
-        const result = await updateTimeById(idParam, saved_At);
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        res.end(JSON.stringify(result));
-        return;
+        if (!isNaN(Number(idParam)) && idParam > 0) {
+            if (isValidSavedAt(saved_At)) {
+                const result = await updateTimeById(idParam, saved_At);
+                res.writeHead(200, {'Content-Type': 'application/json'});
+                res.end(JSON.stringify(result));
+                return;
+            } else {
+                res.writeHead(400, {'Content-Type': 'application/json'});
+                res.end(JSON.stringify({error: 'Invalid saved_at format'}));
+            }
+        } else {
+            res.writeHead(400, {'Content-Type': 'application/json'});
+            res.end(JSON.stringify({error: "Invalid timer ID"}));
+        }
     }
 
     // Обработка запроса: GET /timer
